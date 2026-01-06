@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAPZ BALICIADO AUTO CARE CENTER</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- TOP NAVBAR -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="image/logo.jpg" class="nav-logo" alt="Logo">
+      <div class="brand">
+        <span class="brand-left">PAPZ BALICIADO</span>
+      </div>
+    </div>
+    <button class="open-auth">Register / Login</button>
+  </header>
+
+  <!-- MENU BAR -->
+  <div class="menu-bar">
+    <ul class="nav-links">
+      <li class="active"><a href="#home">HOME</a></li>
+      <li><a href="#services">SERVICES</a></li>
+      <li><a href="about.html">ABOUT US</a></li>
+      <li><a href="contacts.html">CONTACTS</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="image/mv papz.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content left-bottom">
+      <h1>PAPZ BALICIADO AUTO CARE CENTER</h1>
+      <p class="tagline">Para sa Maayos at Ligtas na Byahe</p>
+      <p class="description">
+        Experience a new standard in auto care: attention to detail, expert hands,
+        and genuine service for results you can trust.
+      </p>
+      <div class="hero-buttons">
+        <button class="book" id="bookNowBtn">Book Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+<section id="services" class="services">
+  <h2 class="services-title">ANONG SERBISYO ANG KAILANGAN MO?</h2>
+  <p class="services-subtitle">
+    Kumpleto at propesyonal na serbisyo para sa maayos at ligtas na sasakyan.
+  </p>
+
+  <!-- ROW 1 -->
+  <div class="services-row services-row-top">
+    <div class="service-card">
+      <img src="image/pms 2.png" alt="PMS">
+      <h3>Preventive Maintenance Service (PMS)</h3>
+      <p>
+        Regular maintenance tulad ng oil change, fluid check, at inspection
+        para maiwasan ang major na sira ng sasakyan.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <img src="image/cvt 2.png" alt="CVT Service">
+      <h3>CVT Service</h3>
+      <p>
+        CVT fluid change at inspection para sa mas maayos na takbo at mas
+        mahabang buhay ng transmission.
+      </p>
+    </div>
+  </div>
+
+  <!-- ROW 2 -->
+  <div class="services-row services-row-bottom">
+    <div class="service-card">
+      <img src="image/elect.png" alt="Electrical Works">
+      <h3>Electrical Works</h3>
+      <p>
+        Diagnosis at repair ng electrical system tulad ng wiring, ilaw,
+        sensors, at iba pang electronic components.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <img src="image/repaint 2.png" alt="Car Repair">
+      <h3>Car Repair & Repaints</h3>
+      <p>
+        Body repair, repaint, at restoration para bumalik ang ganda
+        at kondisyon ng iyong sasakyan.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <img src="image/parts 2.png" alt="Parts Replacement">
+      <h3>Parts Replacement</h3>
+      <p>
+        Original at quality replacement parts para sa ligtas at
+        maaasahang performance ng sasakyan.
+      </p>
+    </div>
+  </div>
+
+  <div class="services-btn">
+    <button class="book">Book Service Now</button>
+  </div>
+</section>
+
+
+  <!-- MODAL -->
+  <div class="modal" id="authModal">
+    <div class="modal-box">
+      <span class="close" id="closeModal">&times;</span>
+
+      <div class="modal-header">
+        <img src="image/logo.jpg" class="modal-logo">
+        <h2 class="modal-title">Papz Baliciado</h2>
+        <p class="modal-subtext">
+          Welcome! Log in or register an account for the best service experience.
+        </p>
+      </div>
+
+      <a href="sign up.html">
+        <button class="modal-primary">Register</button>
+      </a>
+
+      <div class="modal-link">
+        <a href="login.html" class="login-redirect">Log in</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="contacts.html">Contacts</a>
+    </div>
+    <p class="footer-copy">© 2025 PAPZ BALICIADO AUTO CARE CENTER</p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    const openAuthBtn = document.querySelector(".open-auth");
+    const bookNowBtn = document.querySelector("#bookNowBtn");
+    const modal = document.getElementById("authModal");
+    const closeModalBtn = document.getElementById("closeModal");
+
+    openAuthBtn.addEventListener("click", () => modal.classList.add("active"));
+    bookNowBtn.addEventListener("click", () => modal.classList.add("active"));
+    closeModalBtn.addEventListener("click", () => modal.classList.remove("active"));
+
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) modal.classList.remove("active");
+    });
+  </script>
+
+</body>
+</html>

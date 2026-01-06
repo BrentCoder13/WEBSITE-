@@ -1,0 +1,230 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #333;
+  padding-top: 120px; /* space for navbar + menu bar */
+  overflow-x: hidden;
+}
+
+/* ───────────────────────────────────────
+   TOP NAVBAR
+──────────────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px; /* same as index.html */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: linear-gradient(to right, black 55%, #dcdcdc 55%);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: black;
+  padding: 12px 25px;
+  width: 55%;
+}
+
+.nav-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-left {
+  color: white;
+  font-size: 32px; /* same size as index.html */
+  font-weight: 900;
+}
+
+.brand-right {
+  color: #ffd700; /* gold */
+  font-size: 16px; /* bigger, more visible */
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* REGISTER / LOGIN BUTTON */
+.open-auth {
+  background: #000;
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 40px;
+  font-size: 16px;
+}
+
+.open-auth:hover {
+  background: #333;
+}
+
+/* ───────────────────────────────────────
+   MENU BAR
+──────────────────────────────────────── */
+.menu-bar {
+  position: fixed;
+  top: 70px;
+  width: 100%;
+  background: #5c00ff;
+  padding: 12px 0;
+  z-index: 999;
+  border-bottom: 2px solid #7b24ff;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-links li a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 17px; /* same as index.html */
+}
+
+.nav-links li:hover a,
+.nav-links li.active a {
+  border-bottom: 2px solid rgb(255, 213, 0);
+}
+
+/* ───────────────────────────────────────
+   ANNOUNCEMENT BOX
+──────────────────────────────────────── */
+.announcement-box {
+  width: 90%;
+  max-width: 1100px;
+  background: #f4f4f4;
+  border-radius: 10px;
+  margin: 40px auto;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  margin-top: 150px; /* space for navbar + menu bar */
+}
+
+.announcement-title {
+  font-size: 20px;
+  font-weight: bold;
+  background: blue;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.announcement-text {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ───────────────────────────────────────
+   BOOKING FORM
+──────────────────────────────────────── */
+.form-container {
+  width: 90%;
+  max-width: 420px;
+  background: #3a3a3a;
+  color: white;
+  padding: 25px;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.form-container h2 {
+  margin-top: 0;
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 24px;
+}
+
+.form-container label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 15px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  width: 100%;
+  background: blue;
+  color: white;
+  border: none;
+  padding: 13px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submit-btn:hover {
+  background: #003cff;
+}
+
+/* ───────────────────────────────────────
+   FOOTER
+──────────────────────────────────────── */
+.footer {
+  background: rgba(0,0,0,0.85);
+  padding: 25px;
+  margin-top: 50px;
+  text-align: center;
+  color: white;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  color: rgb(75, 117, 232);
+}
+
+.footer-copy {
+  font-size: 14px;
+  opacity: 0.8;
+}

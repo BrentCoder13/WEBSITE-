@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAPZ BALICIADO AUTO CARE CENTER</title>
+  <link rel="stylesheet" href="get started.css">
+</head>
+
+<body>
+
+  <!-- TOP NAVBAR (Black + Gray) -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="image/logo.jpg" class="nav-logo" alt="Logo">
+      <div class="brand">
+        <span class="brand-left">PAPZ BALICIADO </span>
+        <span class="brand-right">BALICIADO</span>
+      </div>
+    </div>
+
+    <!-- PROFILE DROPDOWN -->
+    <div class="profile-container">
+      <button class="profile-btn">👤 Profile</button>
+      <div class="profile-dropdown">
+        <a href="profile.html">Profile</a>
+        <a href="settings.html">Settings</a>
+        <a href="index.html">Logout</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PURPLE MENU BAR -->
+  <div class="menu-bar">
+    <ul class="nav-links">
+      <li class="active"><a href="#home">HOME</a></li>
+      <li><a href="#services">SERVICES</a></li>
+      <li><a href="booking.html">BOOK APPOINTMENT</a></li> <!-- Added here -->
+      <li><a href="contacts.html">CONTACTS</a></li>
+      <li><a href="about.html">ABOUT US</a></li>
+    </ul>
+  </div>
+
+ <!-- HERO SECTION -->
+<section id="home" class="hero">
+  <!-- OVERLAY -->
+  <div class="overlay"></div>
+
+  <!-- BACKGROUND VIDEO -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="image/mv papz.mp4" type="video/mp4">
+  </video>
+
+  <!-- HERO CONTENT -->
+  <div class="hero-content left-bottom">
+    <h1>PAPZ BALICIADO AUTO CARE CENTER</h1>
+    <p class="tagline">Para sa Maayos at Ligtas na Byahe</p>
+    <p class="description">
+      Experience a new standard in auto care: attention to detail, expert hands, and genuine service for results you can trust.
+    </p>
+
+    <!-- BOOK NOW BUTTON -->
+    <div class="hero-buttons">
+      <button class="book" onclick="window.location.href='booking.html'">Book Now</button>
+    </div>
+
+    <!-- ROTATING LOGO (optional) -->
+    <div class="hero-logo-rotate">
+      <img src="image/logo.jpg" alt="360° Logo" class="rotating-logo-big">
+    </div>
+  </div>
+</section>
+
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="services-section">
+    <div class="services-banner">OUR SERVICES</div>
+    <div class="services-bg">
+      <div class="service-container">
+        <div class="service-row">
+          <a href="pms.html" class="service-box">
+            <img src="image/pms.jpg" alt="">
+            <p>Preventive Maintenance Services (PMS)</p>
+          </a>
+          <a href="cvt.html" class="service-box">
+            <img src="image/cvt.jpeg" alt="">
+            <p>Continuously Variable Transmission (CVT)</p>
+          </a>
+          <a href="parts.html" class="service-box">
+            <img src="image/parts.jpg" alt="">
+            <p>Parts Replacements (Brake Pads, Adapter, Tie Rod, Rack End)</p>
+          </a>
+        </div>
+        <div class="service-row">
+          <a href="electrical.html" class="service-box">
+            <img src="image/electrical works.jpg" alt="">
+            <p>Electrical Works</p>
+          </a>
+          <a href="repair.html" class="service-box">
+            <img src="image/repaint.jpg" alt="">
+            <p>Car Repair and Repaint</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="contacts.html">Contacts</a>
+    </div>
+    <p class="footer-copy">© 2025 PAPZ BALICIADO AUTO CARE CENTER</p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    // Profile dropdown
+    const profileBtn = document.querySelector('.profile-btn');
+    const profileContainer = document.querySelector('.profile-container');
+
+    profileBtn.addEventListener('click', () => {
+      profileContainer.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!profileContainer.contains(e.target)) {
+        profileContainer.classList.remove('active');
+      }
+    });
+
+    // Hero Book Now button
+    const bookNowBtn = document.querySelector('.book');
+    bookNowBtn.addEventListener('click', () => window.location.href = 'booking.html');
+  </script>
+
+</body>
+</html>

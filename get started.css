@@ -1,0 +1,393 @@
+/* =====================================================
+   RESET & GLOBAL
+===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: white;
+  padding-top: 120px; /* extra for 2-layer navbar */
+  overflow-x: hidden;
+}
+
+/* =====================================================
+   TOP NAVBAR
+===================================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* LEFT AREA (Black) */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: black;
+  padding: 12px 25px;
+  width: 55%; /* black part width */
+}
+
+.nav-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* PAPZ / BALICIADO TEXT */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-left {
+  color: white;
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.brand-right {
+  color: rgb(0, 0, 0);
+  font-size: 32px;
+  font-weight: 900;
+}
+
+/* RIGHT AREA (Gray) */
+.navbar {
+  background: linear-gradient(to right, black 55%, #acacac 55%);
+}
+
+.open-auth {
+  background: #3700ff;
+  color: rgb(255, 235, 235);
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 40px;
+  font-size: 16px;
+}
+
+.open-auth:hover {
+  background: #e6b930;
+}
+
+/* PROFILE DROPDOWN */
+/* PROFILE DROPDOWN ADJUSTMENT */
+.profile-container {
+  position: relative;
+  margin-right: 25px; /* adds spacing from right edge */
+  display: flex;
+  align-items: center;
+}
+
+.profile-btn {
+  background: #ffffff;
+  color: black;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.profile-btn:hover {
+  background: #e6b930;
+  color: black;
+}
+
+.profile-dropdown {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  min-width: 160px; /* slightly wider for comfort */
+  box-shadow: 0px 5px 12px rgba(0,0,0,0.25);
+  overflow: hidden;
+  z-index: 1001;
+}
+
+.profile-dropdown a {
+  display: block;
+  padding: 10px 15px;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.profile-dropdown a:hover {
+  background: rgb(75, 117, 232);
+  color: white;
+}
+
+.profile-container.active .profile-dropdown {
+  display: block;
+}
+
+
+/* =====================================================
+   PURPLE MENU BAR
+===================================================== */
+.menu-bar {
+  position: fixed;
+  top: 70px; /* height of top navbar */
+  width: 100%;
+  background: #5c00ff;
+  padding: 12px 0;
+  z-index: 999;
+  border-bottom: 2px solid #7b24ff;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 40px;
+}
+
+.nav-links li a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  padding-bottom: 4px;
+}
+
+.nav-links li:hover a {
+  border-bottom: 2px solid yellow;
+}
+
+.nav-links li.active a {
+  border-bottom: 2px solid yellow;
+}
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 60px;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 550px;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.tagline {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.description {
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+.hero-buttons .book {
+  background: #2f2ff5;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.hero-buttons .book:hover {
+  background: #2020c2;
+}
+
+/* ROTATING LOGO */
+.hero-logo-rotate {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  perspective: 1000px;
+}
+
+.rotating-logo-big {
+  width: 300px;
+  height: 250px;
+  animation: sideSpin 6s linear infinite;
+  border-radius: 50%;
+  background: black;
+}
+
+@keyframes sideSpin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+/* =====================================================
+   SERVICES SECTION
+===================================================== */
+.services-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.services-banner {
+  background: #000000;
+  color: rgb(255, 255, 255);
+  font-size: 45px;
+  font-weight: 900;
+  text-align: center;
+  padding: 35px 0;
+  letter-spacing: 3px;
+}
+
+.services-bg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  min-height: 110vh;
+  padding: 90px 0 280px;
+  width: 100%;
+}
+
+/* ------ SERVICE CARDS WRAPPER ------ */
+.service-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* TWO ROWS */
+.service-row {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  margin-bottom: 70px;
+}
+
+/* ------ SERVICE CARD ------ */
+.service-box {
+  width: 240px;
+  height: 250px;
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0px 8px 22px rgba(0,0,0,0.45);
+}
+
+.service-box img {
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #ffffff;
+}
+
+.service-box p {
+  margin-top: 12px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.service-box:hover {
+  transform: translateY(-12px);
+  box-shadow: 0px 15px 30px rgba(0,0,0,0.55);
+}
+
+/* RESPONSIVE SERVICE CARDS */
+@media (max-width: 1000px) {
+  .service-row {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 850px) {
+  .service-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+  }
+}
+
+@media (max-width: 500px) {
+  .service-box {
+    width: 85%;
+  }
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.footer {
+  background: rgba(0,0,0,0.85);
+  text-align: center;
+  padding: 25px;
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  color: rgb(75, 117, 232);
+}
+
+.footer-copy {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.85;
+}

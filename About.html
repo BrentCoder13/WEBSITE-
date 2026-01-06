@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAPZ BALICIADO ONLINE SERVICE - About Us</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+
+  <!-- TOP NAVBAR -->
+  <header class="navbar">
+    <div class="nav-left">
+      <img src="image/logo.jpg" class="nav-logo" alt="Logo">
+      <div class="brand">
+        <span class="brand-left">PAPZ BALICIADO</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENU BAR -->
+  <div class="menu-bar">
+
+  </div>
+
+  <!-- ABOUT US -->
+  <section class="about-section">
+      <h2>About Us</h2>
+      <div class="about-image-container">
+          <img src="image/loc.jpg" class="header-img">
+      </div>
+  </section>
+
+  <!-- COMPANY BACKGROUND -->
+  <section class="company-bg">
+      <div class="bg-text">
+          <p>Papz Baliciado Auto Care Center began as a small, mobile service personally handled by its CEO, Papz Baliciado. In the early years, he would travel from one place to another to provide automotive services, sometimes with only a few people to assist him. Most of the work—from mechanical repairs to maintenance—was done through his own skills, effort, and dedication.</p>
+          <p>Despite starting with limited resources, the CEO’s hard work, perseverance, and commitment to quality service paid off. Through consistent customer satisfaction and word-of-mouth recommendations, the business steadily grew. What once started as a one-man operation eventually expanded into a full-scale auto care shop.</p>
+          <p>Today, Papz Baliciado Auto Care Center has a large workshop, multiple skilled staff, and is regularly visited and recommended by many satisfied clients. The shop continues to uphold its mission of delivering reliable, honest, and high-quality automotive service to every customer who walks through its doors.</p>
+      </div>
+
+      <div class="logo-box">
+          <img src="image/logo.jpg" class="header-img">
+      </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission-vision">
+      <div class="mv-left">
+          <img src="image/tp.png" class="team-img">
+      </div>
+
+      <div class="mv-right">
+          <h3>Our Mission</h3>
+          <p>To provide dependable, high-quality automotive services built on honesty, skill, and customer care...</p>
+
+          <h3>Our Vision</h3>
+          <p>To become one of the most trusted and recognized auto care centers in the Philippines...</p>
+      </div>
+  </section>
+
+  <!-- CEO SECTION -->
+  <section class="ceo-section">
+      <div class="ceo-text">
+          <h3>CEO of Papz Baliciado</h3>
+          <p>Rolan Baliciado and Anabel Baliciado, a dedicated husband-and-wife team, are the founders...</p>
+      </div>
+
+      <div class="ceo-img-box">
+          <img src="image/ceo.jpg" class="header-img">
+      </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="contacts.html">Contacts</a>
+    </div>
+    <p class="footer-copy">© 2025 PAPZ BALICIADO AUTO CARE CENTER</p>
+  </footer>
+
+  <!-- SCRIPT FOR MODAL -->
+  <script>
+    const openAuthBtn = document.querySelector(".open-auth");
+    const modal = document.getElementById("authModal");
+    const closeModalBtn = document.getElementById("closeModal");
+
+    openAuthBtn.addEventListener("click", () => modal.classList.add("active"));
+    closeModalBtn?.addEventListener("click", () => modal.classList.remove("active"));
+    window.addEventListener("click", (e) => { if (e.target === modal) modal.classList.remove("active"); });
+  </script>
+
+</body>
+</html>
