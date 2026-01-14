@@ -87,10 +87,10 @@ body {
   position: fixed;
   top: 70px;
   width: 100%;
-  background: #5c00ff;
+  background: #ff0000;
   padding: 12px 0;
   z-index: 999;
-  border-bottom: 2px solid #7b24ff;
+  border-bottom: 2px solid #ff0000;
 }
 
 .nav-links {
@@ -130,7 +130,7 @@ body {
 .announcement-title {
   font-size: 20px;
   font-weight: bold;
-  background: blue;
+  background: rgb(255, 0, 0);
   color: white;
   padding: 10px 15px;
   border-radius: 8px;
@@ -184,7 +184,7 @@ body {
 
 .submit-btn {
   width: 100%;
-  background: blue;
+  background: rgb(255, 0, 0);
   color: white;
   border: none;
   padding: 13px;
@@ -195,7 +195,7 @@ body {
 }
 
 .submit-btn:hover {
-  background: #003cff;
+  background: #ff0000;
 }
 
 /* ───────────────────────────────────────
@@ -221,7 +221,7 @@ body {
 }
 
 .footer-links a:hover {
-  color: rgb(75, 117, 232);
+  color: rgb(255, 0, 0);
 }
 
 .footer-copy {

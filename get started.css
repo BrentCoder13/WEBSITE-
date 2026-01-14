@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  color: white;
+  color: rgb(255, 255, 255);
   padding-top: 120px; /* extra for 2-layer navbar */
   overflow-x: hidden;
 }
@@ -73,7 +73,7 @@ body {
 }
 
 .open-auth {
-  background: #3700ff;
+  background: #ff0000;
   color: rgb(255, 235, 235);
   padding: 10px 25px;
   border: none;
@@ -136,7 +136,7 @@ body {
 }
 
 .profile-dropdown a:hover {
-  background: rgb(75, 117, 232);
+  background: rgb(255, 0, 0);
   color: white;
 }
 
@@ -152,10 +152,10 @@ body {
   position: fixed;
   top: 70px; /* height of top navbar */
   width: 100%;
-  background: #5c00ff;
+  background: #ff0000;
   padding: 12px 0;
   z-index: 999;
-  border-bottom: 2px solid #7b24ff;
+  border-bottom: 2px solid #ff0000;
 }
 
 .nav-links {
@@ -234,7 +234,7 @@ body {
 }
 
 .hero-buttons .book {
-  background: #2f2ff5;
+  background: #ff0000;
   color: white;
   padding: 10px 18px;
   border-radius: 5px;
@@ -244,7 +244,7 @@ body {
 }
 
 .hero-buttons .book:hover {
-  background: #2020c2;
+  background: #ff0000;
 }
 
 /* ROTATING LOGO */
@@ -270,17 +270,18 @@ body {
 }
 
 /* =====================================================
-   SERVICES SECTION
+   SERVICES SECTION 
 ===================================================== */
 .services-section {
   width: 100%;
-  margin: 0;
-  padding: 0;
+  background-color: #f9f9f9;
+  color: #414141;
+  padding-bottom: 100px;
 }
 
 .services-banner {
-  background: #000000;
-  color: rgb(255, 255, 255);
+  background: #ffffff;
+  color: #ff0000;
   font-size: 45px;
   font-weight: 900;
   text-align: center;
@@ -288,67 +289,84 @@ body {
   letter-spacing: 3px;
 }
 
-.services-bg {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  min-height: 110vh;
-  padding: 90px 0 280px;
-  width: 100%;
-}
-
-/* ------ SERVICE CARDS WRAPPER ------ */
+/* SERVICES CONTAINER */
 .service-container {
-  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
+  padding: 60px 20px 0;
 }
 
-/* TWO ROWS */
+/* SERVICE ROWS */
 .service-row {
   display: flex;
-  justify-content: center;
-  gap: 70px;
-  margin-bottom: 70px;
+  justify-content: center; /* center cards horizontally */
+  gap: 40px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  align-items: stretch; /* ensure equal height for cards */
 }
 
-/* ------ SERVICE CARD ------ */
-.service-box {
-  width: 240px;
-  height: 250px;
-  background: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
-  border-radius: 10px;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  transition: 0.3s;
-  box-shadow: 0px 8px 22px rgba(0,0,0,0.45);
+/* SERVICE CARD */
+.service-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  width: 450px;
+  text-align: left;
+  padding: 50px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative; /* for price positioning */
+  overflow: hidden;
 }
 
-.service-box img {
+/* IMAGE */
+.service-card img {
   width: 100%;
-  height: 150px;
-  border-radius: 8px;
+  height: 200px;
   object-fit: cover;
-  background: #ffffff;
+  border-radius: 15px;
+  margin-bottom: 15px;
 }
 
-.service-box p {
-  margin-top: 12px;
+/* TITLE */
+.service-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #2c3e50;
+}
+
+/* DESCRIPTION */
+.service-card .service-desc {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 40px; /* leave space for price */
+  flex-grow: 1; /* pushes price to bottom */
+}
+
+/* PRICE */
+.service-card .service-price {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
   font-weight: bold;
+  color: #ff0000;
   font-size: 14px;
 }
 
-.service-box:hover {
+/* HOVER EFFECT */
+.service-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0px 15px 30px rgba(0,0,0,0.55);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.25);
 }
 
-/* RESPONSIVE SERVICE CARDS */
+/* RESPONSIVE */
 @media (max-width: 1000px) {
   .service-row {
-    gap: 40px;
+    gap: 30px;
   }
 }
 
@@ -356,15 +374,14 @@ body {
   .service-row {
     flex-direction: column;
     align-items: center;
-    gap: 45px;
   }
-}
 
-@media (max-width: 500px) {
-  .service-box {
+  .service-card {
     width: 85%;
   }
 }
+
+
 
 /* =====================================================
    FOOTER
@@ -383,11 +400,78 @@ body {
 }
 
 .footer-links a:hover {
-  color: rgb(75, 117, 232);
+  color: rgb(255, 0, 0);
 }
 
 .footer-copy {
   margin-top: 10px;
   font-size: 14px;
   opacity: 0.85;
+}
+
+/* DRIVE SECTION */
+.drive-section {
+  position: relative;
+  min-height: 80vh;
+  background: url("image/bggg.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  padding: 80px;
+}
+
+/* Optional white overlay for readability */
+.drive-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+ 
+}
+
+.drive-content {
+  position: relative;
+  max-width: 520px;
+}
+
+.drive-label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.drive-content h2 {
+  font-size: 40px;
+  margin: 15px 0;
+  line-height: 1.2;
+}
+
+.drive-content p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.drive-btn {
+  display: inline-block;
+  background: #ff0000;
+  color: #fff;
+  padding: 14px 30px;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.drive-btn:hover {
+  background: #ffd900;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .drive-section {
+    padding: 40px 25px;
+  }
+
+  .drive-content h2 {
+    font-size: 30px;
+  }
 }

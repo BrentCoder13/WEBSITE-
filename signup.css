@@ -90,10 +90,10 @@ body {
   position: fixed;
   top: 70px;
   width: 100%;
-  background: #5c00ff;
+  background: #ff0000;
   padding: 12px 0;
   z-index: 999;
-  border-bottom: 2px solid #7b24ff;
+  border-bottom: 2px solid #ff0000;
 }
 
 .nav-links {
@@ -171,7 +171,7 @@ body {
   width: 100%;
   padding: 12px;
   margin-top: 10px;
-  background: #2f2ff5;
+  background: #ff0000;
   color: white;
   border: none;
   border-radius: 8px;
@@ -180,7 +180,7 @@ body {
 }
 
 .auth-btn:hover {
-  background: #1a1ac9;
+  background: #ff0202;
 }
 
 /* SWITCH TEXT */
@@ -191,7 +191,7 @@ body {
 }
 
 .switch-text a {
-  color: #2f2ff5;
+  color: #ff0000;
   text-decoration: underline;
 }
 
@@ -213,7 +213,7 @@ body {
 }
 
 .footer-links a:hover {
-  color: rgb(75, 117, 232);
+  color: rgb(255, 0, 0);
 }
 
 .footer-copy {

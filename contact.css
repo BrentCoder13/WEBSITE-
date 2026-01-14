@@ -1,0 +1,168 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ───────────────────────────────────────
+   BODY + CONTENT WRAPPER
+──────────────────────────────────────── */
+html, body {
+  height: 100%; /* full height para gumana ang flex */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body{
+  background:#f4f4f4;
+  padding-top:120px; /* space for fixed navbar + menu bar */
+}
+
+.content {
+  flex: 1; /* ito ang magtutulak sa footer pababa */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ───────────────────────────────────────
+   NAVBAR
+──────────────────────────────────────── */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:70px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:linear-gradient(to right, black 55%, #dcdcdc 55%);
+  z-index:1000;
+}
+
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  background:black;
+  padding:12px 25px;
+  width:55%;
+}
+
+.nav-logo{
+  width:50px;
+}
+
+.brand-left{
+  color:white;
+  font-size:32px;
+  font-weight:900;
+}
+
+.open-auth{
+  margin-right:40px;
+  padding:10px 25px;
+  border:none;
+  border-radius:25px;
+  background:black;
+  color:white;
+  font-weight:bold;
+}
+
+/* ───────────────────────────────────────
+   MENU BAR
+──────────────────────────────────────── */
+.menu-bar{
+  position:fixed;
+  top:70px;
+  width:100%;
+  background:#ff0000;
+  padding:12px 0;
+  z-index:999;
+}
+
+.nav-links{
+  display:flex;
+  justify-content:center;
+  list-style:none;
+  gap:40px;
+}
+
+.nav-links a{
+  color:white;
+  font-weight:bold;
+  text-decoration:none;
+  font-size:17px;
+  padding-bottom:5px;
+}
+
+.nav-links li.active a,
+.nav-links li:hover a{
+  border-bottom:2px solid yellow;
+}
+
+/* ───────────────────────────────────────
+   HERO IMAGE
+──────────────────────────────────────── */
+.hero{
+  width:100%;
+  height:400px;
+  background:url("image/tp.png") center/cover no-repeat;
+  filter:blur(2px);
+}
+
+/* ───────────────────────────────────────
+   CONTACT SECTION
+──────────────────────────────────────── */
+.contact-section{
+  text-align:center;
+  padding:60px 20px;
+  flex:1; /* para flexible at magtulak ng footer sa bottom */
+}
+
+.contact-section h2{
+  font-size:32px;
+}
+
+.contact-section p{
+  margin:15px 0 30px;
+}
+
+.contact-icons a{
+  font-size:40px;
+  margin:0 20px;
+  color:black;
+  transition:.3s;
+}
+
+.contact-icons a:hover{
+  transform:scale(1.2);
+  color:#ff0000;
+}
+
+/* ───────────────────────────────────────
+   FOOTER (sticky sa bottom)
+──────────────────────────────────────── */
+.footer{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:25px;
+  font-size:14px;
+}
+
+.footer-links a{
+  color:white;
+  margin:0 15px;
+  text-decoration:none;
+}
+
+.footer-links a:hover{
+  color:#ff0000;
+}
+
+.footer-copy{
+  font-size:14px;
+  opacity:.8;
+}

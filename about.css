@@ -87,10 +87,10 @@ img {
   position: fixed;
   top: 70px;
   width: 100%;
-  background: #5c00ff;
+  background: #ff0000;
   padding: 12px 0;
   z-index: 999;
-  border-bottom: 2px solid #7b24ff;
+  border-bottom: 2px solid #ff0000;
 }
 
 .nav-links {
@@ -126,113 +126,187 @@ img {
    ABOUT US SECTION
 ──────────────────────────────────────── */
 .about-section {
-    padding: 30px 50px;
+    padding: 50px 10%;
+    text-align: center;
+    background: white;
 }
 
 .about-section h2 {
-    margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
 }
 
-/* FULL WIDTH IMAGE */
 .about-image-container {
-    width: 100%;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image-container img {
+    max-width: 420px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* ───────────────────────────────────────
+   COMPANY BACKGROUND (MACC STYLE)
+──────────────────────────────────────── */
+.company-bg {
+    background: white;
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 50px;
+    padding: 80px 10%;
+}
+
+.bg-text h3 {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.bg-text p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    color: #111;
+}
+
+.bg-text ul {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.bg-text li {
+    padding: 14px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.bg-text li strong {
+    color: #ff0000;
+}
+
+/* Right logo panel */
+.logo-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-box img {
+    max-width: 300px;
+}
+
+/* ───────────────────────────────────────
+   MISSION & VISION – DARK PANEL
+──────────────────────────────────────── */
+.mission-vision {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #0c0c0c;
+    padding: 80px 10%;
+    gap: 50px;
+    color: white;
 }
 
 .team-img {
     width: 100%;
-    max-width: 600px;
-    height: 600px;
-    object-fit: cover;
-    border-radius: 15px;
-}
-
-/* COMPANY BACKGROUND */
-.company-bg {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 50px;
-}
-
-.bg-text p {
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-.logo-box img {
-    width: 600px;
-    height: 500px;
-    object-fit: contain;
-}
-
-/* MISSION & VISION */
-.mission-vision {
-    display: flex;
-    align-items: flex-start;
-    padding: 50px;
-    gap: 40px;
+    max-width: 500px;
+    border-radius: 10px;
 }
 
 .mv-right h3 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 24px;
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 15px;
 }
 
 .mv-right p {
-    margin-bottom: 25px;
-    line-height: 1.6;
-}
-
-/* CEO SECTION */
-.ceo-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px;
-    gap: 40px;
-}
-
-.ceo-img {
-    width: 600px;
-    height: 600px; 
-    object-fit: cover;  
-    border-radius: 15px;
-}
-
-.ceo-text {
-    width: 65%;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 30px;
 }
 
 /* ───────────────────────────────────────
-   FOOTER (LIKE INDEX.HTML)
+   CEO SECTION
+──────────────────────────────────────── */
+.ceo-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    padding: 80px 10%;
+    background: white;
+}
+
+.ceo-text h3 {
+    font-size: 28px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.ceo-text p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.ceo-img-box img {
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+/* ───────────────────────────────────────
+   FOOTER
 ──────────────────────────────────────── */
 .footer {
   background: rgba(0,0,0,0.85);
   padding: 25px;
-  margin-top: 50px;
   text-align: center;
   color: white;
-}
-
-.footer-links {
-  margin-bottom: 10px;
 }
 
 .footer-links a {
   color: white;
   margin: 0 15px;
-  text-decoration: none;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .footer-links a:hover {
-  color: rgb(75, 117, 232);
+  color: rgb(255, 0, 0);
 }
 
 .footer-copy {
   font-size: 14px;
   opacity: 0.8;
+}
+
+
+/* TOP POSTER (CEO + badges) */
+.about-poster{
+  width: 360px;
+  max-width: 100%;
+  margin: 30px auto 0;
+  display:block;
+}
+
+/* BLACK SERVICES PANEL */
+.services-panel{
+  background:black;
+  padding:40px 0;
+  text-align:center;
+}
+
+.services-panel img{
+  width: 750px;
+  max-width: 70%;
+  display:block;
+  margin: auto;
+}
+
+.services-panel img{
+  width: 850px;        /* exact visual width from screenshot */
+  max-width: 90%;
+  margin: 0 auto;
+  display: block;
 }
