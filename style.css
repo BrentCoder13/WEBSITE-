@@ -1,3 +1,4 @@
+/* ===== RESET & BASE ===== */
 * {
   margin: 0;
   padding: 0;
@@ -12,9 +13,7 @@ body {
   background: #f4f4f4;
 }
 
-/* ───────────────────────────────────────
-   TOP NAVBAR
-──────────────────────────────────────── */
+/* ===== NAVBAR ===== */
 .navbar {
   position: fixed;
   top: 0;
@@ -25,6 +24,7 @@ body {
   align-items: center;
   z-index: 1000;
   background: linear-gradient(to right, black 55%, #dcdcdc 55%);
+  flex-wrap: wrap;
 }
 
 .nav-left {
@@ -64,9 +64,7 @@ body {
   background: #333;
 }
 
-/* ───────────────────────────────────────
-   MENU BAR
-──────────────────────────────────────── */
+/* ===== MENU BAR ===== */
 .menu-bar {
   position: fixed;
   top: 70px;
@@ -96,9 +94,7 @@ body {
   border-bottom: 2px solid rgb(255, 213, 0);
 }
 
-/* ───────────────────────────────────────
-   HERO SECTION
-──────────────────────────────────────── */
+/* ===== HERO SECTION ===== */
 .hero {
   position: relative;
   width: 100%;
@@ -154,13 +150,7 @@ body {
   cursor: pointer;
 }
 
-.hero-buttons .book:hover {
-  background: #ff0000;
-}
-
-/* ───────────────────────────────────────
-   SERVICES SECTION
-──────────────────────────────────────── */
+/* ===== SERVICES SECTION ===== */
 .services {
   background: #ffffff;
   color: #222;
@@ -219,28 +209,7 @@ body {
   opacity: 0.8;
 }
 
-.services-btn {
-  margin-top: 50px;
-}
-
-.services-btn .book {
-  background: #ff0000;
-  color: white;
-  padding: 14px 30px;
-  font-size: 18px;
-  border-radius: 8px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-}
-
-.services-btn .book:hover {
-  background: #1a1ac9;
-}
-
-/* ───────────────────────────────────────
-   MODAL
-──────────────────────────────────────── */
+/* ===== MODAL ===== */
 .modal {
   position: fixed;
   inset: 0;
@@ -297,9 +266,7 @@ body {
   color: black;
 }
 
-/* ───────────────────────────────────────
-   FOOTER
-──────────────────────────────────────── */
+/* ===== FOOTER ===== */
 .footer {
   background: rgba(0,0,0,0.85);
   padding: 25px;
@@ -321,4 +288,119 @@ body {
 .footer-copy {
   font-size: 14px;
   opacity: 0.8;
+}
+
+/* ===== MEDIA QUERIES FOR MOBILE ===== */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 15px;
+  }
+
+  .nav-left {
+    width: 100%;
+    padding: 10px 0;
+    justify-content: flex-start;
+  }
+
+  .brand-left {
+    font-size: 24px;
+  }
+
+  .open-auth {
+    margin: 10px 0 0 0;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  /* Menu bar */
+  .menu-bar {
+    top: auto;
+    position: relative;
+    padding: 8px 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 30px 15px;
+    min-height: 50vh;
+    align-items: flex-end;
+  }
+
+  .hero-content {
+    max-width: 90%;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .hero-buttons .book {
+    padding: 10px 18px;
+    font-size: 16px;
+  }
+
+  /* Services Section */
+  .services {
+    padding: 50px 15px;
+  }
+
+  .services-title {
+    font-size: 28px;
+  }
+
+  .services-subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .services-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .service-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .service-card img {
+    width: 60px;
+    margin-bottom: 15px;
+  }
+
+  .service-card h3 {
+    font-size: 18px;
+  }
+
+  .service-card p {
+    font-size: 13px;
+  }
+
+  /* Modal */
+  .modal-box {
+    width: 90%;
+    padding: 25px;
+  }
 }
