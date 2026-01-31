@@ -37,9 +37,7 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-  background: black;
-  padding: 12px 25px;
-  width: 55%; /* black part width */
+  padding-left: 25px;
 }
 
 .nav-logo {
@@ -69,12 +67,12 @@ body {
 
 /* RIGHT AREA (Gray) */
 .navbar {
-  background: linear-gradient(to right, black 55%, #acacac 55%);
+  background: linear-gradient(to right, black 55%, #000000 55%);
 }
 
 .open-auth {
-  background: #ff0000;
-  color: rgb(255, 235, 235);
+  background: #4b4949;
+  color: #fff;
   padding: 10px 25px;
   border: none;
   border-radius: 25px;
@@ -98,8 +96,8 @@ body {
 }
 
 .profile-btn {
-  background: #ffffff;
-  color: black;
+   background: #4b4949;
+  color: #fff;
   font-size: 18px;
   border: none;
   border-radius: 25px;

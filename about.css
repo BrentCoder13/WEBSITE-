@@ -25,7 +25,7 @@ img {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background: linear-gradient(to right, black 55%, #dcdcdc 55%);
+  background: linear-gradient(to right, black 55%, #000000 55%);
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
@@ -33,9 +33,7 @@ img {
   display: flex;
   align-items: center;
   gap: 15px;
-  background: black;
   padding: 12px 25px;
-  width: 55%;
 }
 
 .nav-logo {

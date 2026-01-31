@@ -23,7 +23,7 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background: linear-gradient(to right, black 55%, #dcdcdc 55%);
+  background: linear-gradient(to right, black 55%, #000000 55%);
   flex-wrap: wrap;
 }
 
@@ -31,9 +31,7 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-  background: black;
-  padding: 12px 25px;
-  width: 55%;
+  padding-left: 25px;
 }
 
 .nav-logo {
@@ -49,7 +47,7 @@ body {
 }
 
 .open-auth {
-  background: #000;
+  background: #4b4949;
   color: #fff;
   padding: 10px 25px;
   border: none;

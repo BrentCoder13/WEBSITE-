@@ -37,7 +37,7 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  background:linear-gradient(to right, black 55%, #dcdcdc 55%);
+  background:linear-gradient(to right, black 55%, #000000 55%);
   z-index:1000;
 }
 
@@ -45,9 +45,7 @@ body{
   display:flex;
   align-items:center;
   gap:15px;
-  background:black;
   padding:12px 25px;
-  width:55%;
 }
 
 .nav-logo{
