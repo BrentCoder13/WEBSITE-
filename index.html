@@ -149,20 +149,40 @@
   </footer>
 
   <!-- SCRIPT -->
-  <script>
-    const openAuthBtn = document.querySelector(".open-auth");
-    const bookNowBtn = document.querySelector("#bookNowBtn");
-    const modal = document.getElementById("authModal");
-    const closeModalBtn = document.getElementById("closeModal");
+<script>
+  const openAuthBtn = document.querySelector(".open-auth");
+  const bookNowBtn = document.getElementById("bookNowBtn");
+  const modal = document.getElementById("authModal");
+  const closeModalBtn = document.getElementById("closeModal");
 
+  // SAFE CHECKS (para di mag-crash)
+  if (openAuthBtn) {
     openAuthBtn.addEventListener("click", () => modal.classList.add("active"));
-    bookNowBtn.addEventListener("click", () => modal.classList.add("active"));
-    closeModalBtn.addEventListener("click", () => modal.classList.remove("active"));
+  }
 
-    window.addEventListener("click", (e) => {
-      if (e.target === modal) modal.classList.remove("active");
+  if (bookNowBtn) {
+    bookNowBtn.addEventListener("click", () => modal.classList.add("active"));
+  }
+
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener("click", () => modal.classList.remove("active"));
+  }
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) modal.classList.remove("active");
+  });
+
+  // ✅ ITO LANG PARA SA THREE LINES
+  const newHamburger = document.getElementById("newHamburger");
+  const menu = document.querySelector(".menu");
+
+  if (newHamburger && menu) {
+    newHamburger.addEventListener("click", () => {
+      menu.classList.toggle("active");
     });
-  </script>
+  }
+</script>
+
 
 </body>
 </html>
