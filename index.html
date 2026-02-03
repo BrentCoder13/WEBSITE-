@@ -150,15 +150,9 @@
 
   <!-- SCRIPT -->
 <script>
-  const openAuthBtn = document.querySelector(".open-auth");
   const bookNowBtn = document.getElementById("bookNowBtn");
   const modal = document.getElementById("authModal");
   const closeModalBtn = document.getElementById("closeModal");
-
-  // SAFE CHECKS (para di mag-crash)
-  if (openAuthBtn) {
-    openAuthBtn.addEventListener("click", () => modal.classList.add("active"));
-  }
 
   if (bookNowBtn) {
     bookNowBtn.addEventListener("click", () => modal.classList.add("active"));
@@ -172,7 +166,7 @@
     if (e.target === modal) modal.classList.remove("active");
   });
 
-  // ✅ ITO LANG PARA SA THREE LINES
+  // HAMBURGER
   const newHamburger = document.getElementById("newHamburger");
   const menu = document.querySelector(".menu");
 
@@ -182,7 +176,6 @@
     });
   }
 </script>
-
 
 </body>
 </html>
