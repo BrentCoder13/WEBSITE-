@@ -24,3 +24,10 @@ window.addEventListener("click", (e) => {
     modal.classList.remove("active");
   }
 });
+
+const newHamburger = document.getElementById('newHamburger');
+const newMenu = document.querySelector('.new-navbar .menu');
+
+newHamburger.addEventListener('click', () => {
+  newMenu.classList.toggle('active');
+});
