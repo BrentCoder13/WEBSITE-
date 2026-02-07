@@ -43,29 +43,26 @@
   <h2>Book an Appointment</h2>
 
   <!-- DATABASE-READY FORM -->
-  <form method="POST" action="save_booking.php">
+  <form id="bookingForm">
+  <label>Full Name</label>
+  <input type="text" id="full_name" placeholder="Enter your full name" required>
 
-    <label>Full Name</label>
-    <input type="text" name="full_name" placeholder="Enter your full name" required>
+  <label>Email Address</label>
+  <input type="email" id="email" placeholder="Enter your email" required>
 
-    <label>Email Address</label>
-    <input type="email" name="email" placeholder="Enter your email" required>
+  <label>Contact Number</label>
+  <input type="text" id="contact_number" placeholder="Enter your contact number" required>
 
-    <label>Contact Number</label>
-    <input type="text" name="contact_number" placeholder="Enter your contact number" required>
+  <label>Full Address</label>
+  <textarea id="address" placeholder="Enter your full address" rows="2" required></textarea>
 
-    <label>Full Address</label>
-    <textarea name="address" placeholder="Enter your full address" rows="2" required></textarea>
+  <label>Preferred Date of Service</label>
+  <input type="date" id="service_date" required>
 
-    <label>Preferred Date of Service</label>
-    <input type="date" name="service_date" required>
-
-    <!-- DEFAULT STATUS FOR ADMIN -->
-    <input type="hidden" name="status" value="Pending">
-
-    <button type="submit" class="submit-btn">
-      Submit Appointment Request
-    </button>
+  <button type="submit" class="submit-btn">
+    Submit Appointment Request
+  </button>
+</form>
 
   </form>
 </div>

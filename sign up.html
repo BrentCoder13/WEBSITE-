@@ -5,21 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign Up - Papz Baliciado</title>
   <link rel="stylesheet" href="signup.css">
-  
 </head>
 
 <body>
 
-  <!-- NAVBAR (SAME AS HOMEPAGE) -->
+  <!-- NAVBAR -->
   <header class="navbar">
     <div class="nav-left">
       <img src="image/logo.jpg" class="nav-logo" alt="Logo">
-
       <div class="brand">
-      <span class="brand-left">PAPZ BALICIADO ONLINE SERVICE</span>
+        <span class="brand-left">PAPZ BALICIADO ONLINE SERVICE</span>
       </div>
     </div>
-
   </header>
 
   <!-- PURPLE MENU BAR -->
@@ -31,16 +28,17 @@
     </ul>
   </div>
 
-  <!-- SIGN UP CONTENT (UNCHANGED) -->
+  <!-- SIGN UP CONTENT -->
   <div class="signup-page">
     <div class="signup-container">
       <h2>Welcome to Papz Baliciado!</h2>
       <p class="form-msg">Register an account for the unforgettable experience!</p>
 
-      <form action="get started.html" method="get">
-        <input type="text" placeholder="Full Name" required>
-        <input type="username" placeholder="Username" required>
-        <input type="password" placeholder="Password" required>
+      <!-- UPDATED FORM -->
+      <form id="signupForm">
+        <input type="text" id="full_name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
         <button type="submit" class="auth-btn">Register</button>
       </form>
 
@@ -50,7 +48,7 @@
     </div>
   </div>
 
-  <!-- FOOTER (UNCHANGED) -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-links">
       <a href="about.html">About Us</a>
@@ -58,6 +56,9 @@
     </div>
     <p class="footer-copy">© 2025 PAPZ BALICIADO AUTO CARE CENTER</p>
   </footer>
+
+  <!-- LINK SIGNUP JS -->
+  <script type="module" src="signup.js"></script>
 
 </body>
 </html>
