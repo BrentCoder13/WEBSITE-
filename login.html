@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login - Papz Baliciado</title>
   <link rel="stylesheet" href="login.css">
+
+  <!-- FIREBASE SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <!-- FIREBASE CONFIG -->
+  <script src="firebase-config.js"></script>
 </head>
 
 <body>
@@ -13,7 +21,6 @@
   <header class="navbar">
     <div class="nav-left">
       <img src="image/logo.jpg" class="nav-logo" alt="Logo">
-
       <div class="brand">
         <span class="brand-left">PAPZ BALICIADO ONLINE SERVICE</span>
       </div>
@@ -35,7 +42,7 @@
       <h2>Welcome Back!</h2>
       <p class="form-msg">Log in to your account to continue enjoying our services.</p>
 
-      <!-- UPDATED FORM -->
+      <!-- LOGIN FORM -->
       <form id="loginForm">
         <input type="email" id="email" placeholder="Email" required>
         <input type="password" id="password" placeholder="Password" required>
@@ -43,8 +50,10 @@
       </form>
 
       <p class="switch-text">
-        Don't have an account? <a href="sign up.html">Register</a>
+        Don't have an account? <a href="signup.html">Register</a>
       </p>
+
+      <div id="loginMessage" style="margin-top:10px; font-weight:bold;"></div>
     </div>
   </div>
 
@@ -57,8 +66,8 @@
     <p class="footer-copy">© 2025 PAPZ BALICIADO AUTO CARE CENTER</p>
   </footer>
 
-  <!-- LINK LOGIN JS -->
-  <script type="module" src="login.js"></script>
+  <!-- LOGIN JS -->
+  <script src="js/login.js"></script>
 
 </body>
 </html>

@@ -1,194 +1,148 @@
-* {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+/* ===== General ===== */
+body {
   font-family: Arial, sans-serif;
-}
-
-html, body {
-  height: 100%;
+  margin: 0;
+  background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-body {
-  background:#f4f4f4;
-  padding-top:140px; /* space for navbar + menu */
+/* ===== Navbar ===== */
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #4B0082;
+  color: white;
 }
 
-.content {
-  flex: 1;
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px;
+.nav-logo { width: 50px; height: 50px; margin-right: 15px; }
+.brand-left { font-size: 20px; font-weight: bold; }
+
+/* ===== Menu Bar ===== */
+.menu-bar {
+  width: 100%;
+  background-color: #6A0DAD;
+  padding: 10px 0;
+  margin-bottom: 30px;
+}
+.menu-bar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.menu-bar ul li {
+  margin: 0 20px;
+}
+.menu-bar ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+.menu-bar ul li.active a {
+  text-decoration: underline;
 }
 
-/* NAVBAR */
-.navbar{
-  position:fixed;
-  top:0;
-  width:100%;
-  height:70px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:linear-gradient(to right, black 55%, #000000 55%);
-  z-index:1000;
+/* ===== Account Container ===== */
+.account-container {
+  width: 500px;
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.nav-left{
-  display:flex;
-  align-items:center;
-  gap:15px;
-  padding:12px 25px;
+/* ===== Form ===== */
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.nav-logo{
-  width:50px;
+form label {
+  width: 100%;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
-.brand-left{
-  color:white;
-  font-size:32px;
-  font-weight:900;
+form input {
+  width: 100%;
+  padding: 15px;
+  margin-top: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
-.open-auth{
-  margin-right:40px;
-  padding:10px 25px;
-  border:none;
-  border-radius:25px;
-  background:black;
-  color:white;
-  font-weight:bold;
+.submit-btn {
+  width: 100%;
+  margin-top: 30px;
+  padding: 15px;
+  font-size: 18px;
+  background-color: #4B0082;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-/* MENU BAR */
-.menu-bar{
-  position:fixed;
-  top:70px;
-  width:100%;
-  background:#ff0000;
-  padding:12px 0;
-  z-index:999;
+.submit-btn:hover {
+  background-color: #6A0DAD;
 }
 
-.nav-links{
-  display:flex;
-  justify-content:center;
-  list-style:none;
-  gap:40px;
+/* ===== Account Message ===== */
+#accountMessage {
+  margin-top: 15px;
+  font-weight: bold;
+  color: green;
+  text-align: center;
 }
 
-.nav-links a{
-  color:white;
-  font-weight:bold;
-  text-decoration:none;
-  font-size:17px;
-  padding-bottom:5px;
+/* ===== Bookings Table ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  font-size: 16px;
 }
 
-.nav-links li.active a,
-.nav-links li:hover a{
-  border-bottom:2px solid yellow;
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
 }
 
-/* PROFILE SECTION */
-.profile {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 40px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+table th {
+  background-color: #4B0082;
+  color: white;
 }
 
-.profile h2 {
-    margin-bottom: 20px;
-    font-size: 28px;
-}
+table tr:nth-child(even) { background-color: #f2f2f2; }
+table tr:hover { background-color: #e0d4f0; }
 
-.profile label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-}
 
-.profile input {
-    width: 100%;
-    padding: 14px;
-    margin-top: 5px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .account-container {
+    margin: 20px;
+    padding: 15px;
+  }
 
-.profile button {
-    margin-top: 25px;
-    padding: 14px 30px;
-    background:#ff0000;
-    color:white;
-    border:none;
-    border-radius:10px;
-    font-size:16px;
-    cursor:pointer;
-}
+  .menu-bar ul {
+    flex-direction: column;
+  }
 
-/* APPOINTMENTS TABLE */
-.appointments {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.appointments h2 {
-    margin-bottom: 20px;
-    font-size: 28px;
-}
-
-.appointments table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 16px;
-}
-
-.appointments th, .appointments td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: center;
-}
-
-.appointments th {
-    background: #ff0000;
-    color: white;
-    font-size: 18px;
-}
-
-.no-booking {
-    color: #888;
-    font-style: italic;
-}
-
-/* FOOTER */
-.footer{
-    background:#111;
-    color:white;
-    text-align:center;
-    padding:25px;
-    font-size:14px;
-}
-
-.footer-links a{
-    color:white;
-    margin:0 15px;
-    text-decoration:none;
-}
-
-.footer-links a:hover{
-    color:#4b75e8;
-}
-
-.footer-copy{
-    font-size:14px;
-    opacity:.8;
+  .menu-bar ul li {
+    margin-bottom: 10px;
+  }
 }
