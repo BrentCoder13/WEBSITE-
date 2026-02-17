@@ -4,8 +4,6 @@ const accountMessage = document.getElementById("accountMessage");
 const bookingsBody = document.getElementById("bookingsBody");
 const updateBtn = document.getElementById("updateBtn");
 
-let previousStatuses = {}; // para sa notification
-
 auth.onAuthStateChanged(user => {
   if (!user) {
     accountMessage.style.color = "red";
@@ -23,7 +21,7 @@ auth.onAuthStateChanged(user => {
       }
     });
 
-  // Real-time bookings listener
+  // Realtime bookings listener
   db.collection("bookings")
     .where("userId", "==", user.uid)
     .orderBy("createdAt", "desc")
@@ -32,8 +30,8 @@ auth.onAuthStateChanged(user => {
 
       snapshot.forEach(doc => {
         const data = doc.data();
-
         const row = document.createElement("tr");
+        row.id = doc.id; // important para sa highlight
         let statusColor;
         switch(data.status) {
           case "Approved": statusColor = "green"; break;
@@ -47,17 +45,22 @@ auth.onAuthStateChanged(user => {
           <td style="color:${statusColor}; font-weight:bold;">${data.status || "Pending"}</td>
         `;
         bookingsBody.appendChild(row);
-
-        // 🔔 Notification kapag nagbago ang status
-        if(previousStatuses[doc.id] && previousStatuses[doc.id] !== data.status) {
-          alert(`Your booking on ${data.serviceDate} has been ${data.status}!`);
-        }
-        previousStatuses[doc.id] = data.status;
       });
+
+      // Highlight kung may query param bookingId
+      const urlParams = new URLSearchParams(window.location.search);
+      const highlightId = urlParams.get("bookingId");
+      if (highlightId) {
+        const row = document.getElementById(highlightId);
+        if (row) {
+          row.style.backgroundColor = "#fffa90";
+          row.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }
     });
 });
 
-// Update Full Name
+// Update full name
 updateBtn.addEventListener("click", () => {
   const user = auth.currentUser;
   if (!user) return;

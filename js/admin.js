@@ -48,12 +48,35 @@ statusFilter.addEventListener("change", () => {
     .then(snapshot => renderBookings(snapshot, statusFilter.value));
 });
 
-// Function para i-update ang status
+// Function para i-update ang status at mag-create ng notification
 function updateStatus(docId, status) {
-  db.collection("bookings").doc(docId).update({
+  const bookingRef = db.collection("bookings").doc(docId);
+
+  bookingRef.update({
     status: status,
     lastUpdated: new Date()
   })
-  .then(() => console.log("Status updated:", status))
+  .then(() => {
+    console.log("Status updated:", status);
+
+    // 🔔 Add notification for the user
+    bookingRef.get().then(doc => {
+      if (doc.exists) {
+        const data = doc.data();
+        db.collection("users").doc(data.userId)
+          .collection("notifications")
+          .add({
+            message: `Your booking on ${data.serviceDate} has been ${status}!`,
+            status: status,
+            bookingId: docId,
+            read: false,
+            createdAt: new Date()
+          })
+          .then(() => console.log("Notification created for user"))
+          .catch(err => console.error("Error creating notification:", err));
+      }
+    });
+
+  })
   .catch(err => console.error("Error updating status:", err));
 }

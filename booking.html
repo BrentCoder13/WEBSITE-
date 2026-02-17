@@ -82,7 +82,52 @@
 </footer>
 
 <!-- BOOKING JS -->
-<script src="js/booking.js"></script>
+<script>
+const bookingForm = document.getElementById("bookingForm"); 
+const bookingMessage = document.getElementById("bookingMessage");
+
+bookingForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const fullName = document.getElementById("full_name").value;
+  const email = document.getElementById("email").value;
+  const contactNumber = document.getElementById("contact_number").value;
+  const address = document.getElementById("address").value;
+  const serviceDate = document.getElementById("service_date").value;
+
+  const user = auth.currentUser;
+  if (!user) {
+    bookingMessage.style.color = "red";
+    bookingMessage.textContent = "You must be logged in to submit a booking.";
+    return;
+  }
+
+  // Add booking to Firestore
+  db.collection("bookings").add({
+    userId: user.uid,
+    fullName: fullName,
+    email: email,
+    contactNumber: contactNumber,
+    address: address,
+    serviceDate: serviceDate,
+    status: "Pending",
+    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  })
+  .then(docRef => {
+    bookingMessage.style.color = "green";
+    bookingMessage.textContent = "Booking submitted successfully! Redirecting to your account...";
+
+    // Redirect to account management with query param for highlight
+    setTimeout(() => {
+      window.location.href = `account.html?bookingId=${docRef.id}`;
+    }, 1200);
+  })
+  .catch(error => {
+    bookingMessage.style.color = "red";
+    bookingMessage.textContent = "Error: " + error.message;
+  });
+});
+</script>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-const bookingForm = document.getElementById("bookingForm");
+const bookingForm = document.getElementById("bookingForm"); 
 const bookingMessage = document.getElementById("bookingMessage");
 
 bookingForm.addEventListener("submit", (e) => {
@@ -10,7 +10,6 @@ bookingForm.addEventListener("submit", (e) => {
   const address = document.getElementById("address").value;
   const serviceDate = document.getElementById("service_date").value;
 
-  // Siguraduhin na naka-login ang user
   const user = auth.currentUser;
   if (!user) {
     bookingMessage.style.color = "red";
@@ -26,15 +25,16 @@ bookingForm.addEventListener("submit", (e) => {
     contactNumber: contactNumber,
     address: address,
     serviceDate: serviceDate,
-    createdAt: new Date()
+    status: "Pending",
+    createdAt: firebase.firestore.FieldValue.serverTimestamp()
   })
-  .then(() => {
+  .then((docRef) => {
     bookingMessage.style.color = "green";
-    bookingMessage.textContent = "Booking submitted successfully!";
+    bookingMessage.textContent = "Booking submitted successfully! Redirecting...";
     bookingForm.reset();
 
-    // Optional: redirect sa confirmation page
-    // window.location.href = "booking-confirmation.html";
+    // Redirect sa account management at highlight booking
+    window.location.href = `account.html?bookingId=${docRef.id}`;
   })
   .catch((error) => {
     bookingMessage.style.color = "red";
