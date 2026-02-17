@@ -6,12 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PAPZ BALICIADO AUTO CARE CENTER</title>
   <link rel="stylesheet" href="get started.css">
+
+  <!-- FONT AWESOME FOR BELL ICON -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-  <!-- TOP NAVBAR (Black + Gray) -->
+  <!-- TOP NAVBAR -->
   <header class="navbar">
+
     <div class="nav-left">
       <img src="image/logo.jpg" class="nav-logo" alt="Logo">
       <div class="brand">
@@ -19,14 +24,27 @@
       </div>
     </div>
 
-    <!-- PROFILE DROPDOWN -->
-    <div class="profile-container">
-      <button class="profile-btn">👤 Profile</button>
-      <div class="profile-dropdown">
-        <a href="Account.html">Profile</a>
-        <a href="index.html">Logout</a>
+    <!-- RIGHT SIDE NAV -->
+    <div class="nav-right">
+
+      <!-- 🔔 NOTIFICATION -->
+      <div class="notification-container">
+        <i class="fas fa-bell" id="notificationBell"></i>
+        <span id="notificationCount" class="notification-badge">0</span>
+        <div id="notificationDropdown" class="notification-dropdown"></div>
       </div>
+
+      <!-- PROFILE DROPDOWN -->
+      <div class="profile-container">
+        <button class="profile-btn">👤 Profile</button>
+        <div class="profile-dropdown">
+          <a href="Account.html">Profile</a>
+          <a href="index.html">Logout</a>
+        </div>
+      </div>
+
     </div>
+
   </header>
 
   <!-- PURPLE MENU BAR -->
@@ -34,112 +52,86 @@
     <ul class="nav-links">
       <li class="active"><a href="#home">HOME</a></li>
       <li><a href="#services">SERVICES</a></li>
-      <li><a href="booking.html">BOOK APPOINTMENT</a></li> <!-- Added here -->
+      <li><a href="booking.html">BOOK APPOINTMENT</a></li>
       <li><a href="contact.html">CONTACTS</a></li>
       <li><a href="about.html">ABOUT US</a></li>
     </ul>
   </div>
 
- <!-- HERO SECTION -->
-<section id="home" class="hero">
-  <!-- OVERLAY -->
-  <div class="overlay"></div>
+  <!-- HERO SECTION -->
+  <section id="home" class="hero">
 
-  <!-- BACKGROUND VIDEO -->
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="image/mv papz.mp4" type="video/mp4">
-  </video>
+    <div class="overlay"></div>
 
-  <!-- HERO CONTENT -->
-  <div class="hero-content left-bottom">
-    <h1>PAPZ BALICIADO AUTO CARE CENTER</h1>
-    <p class="tagline">Para sa Maayos at Ligtas na Byahe</p>
-    <p class="description">
-      Experience a new standard in auto care: attention to detail, expert hands, and genuine service for results you can trust.
-    </p>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="image/mv papz.mp4" type="video/mp4">
+    </video>
 
-    <!-- BOOK NOW BUTTON -->
-    <div class="hero-buttons">
-      <button class="book" onclick="window.location.href='booking.html'">Book Now</button>
-    </div>
+    <div class="hero-content left-bottom">
+      <h1>PAPZ BALICIADO AUTO CARE CENTER</h1>
+      <p class="tagline">Para sa Maayos at Ligtas na Byahe</p>
+      <p class="description">
+        Experience a new standard in auto care: attention to detail, expert hands, and genuine service for results you can trust.
+      </p>
 
-    
-</section>
-
-
- <!-- SERVICES SECTION -->
-<section id="services" class="services-section">
-  <div class="services-banner">OUR SERVICES</div>
-  
-  <div class="service-container">
-
-    <!-- ROW 1: 2 CARDS -->
-    <div class="service-row">
-      <!-- Card 1 -->
-      <div class="service-card">
-        <img src="image/pms.jpg" alt="Preventive Maintenance Services">
-        <h3>Preventive Maintenance Services (PMS)</h3>
-        <p class="service-desc">Regular preventive maintenance to keep your vehicle running smoothly and safely.</p>
-        <p class="service-price">Starts at $1000</p>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="service-card">
-        <img src="image/cvt.jpeg" alt="Continuously Variable Transmission">
-        <h3>Continuously Variable Transmission (CVT)</h3>
-        <p class="service-desc">CVT inspection, repair, and optimization for smooth gear performance.</p>
-        <p class="service-price">Starts at $1000</p>
+      <div class="hero-buttons">
+        <button class="book">Book Now</button>
       </div>
     </div>
 
-    <!-- ROW 2: 3 CARDS -->
-    <div class="service-row">
-      <!-- Card 3 -->
-      <div class="service-card">
-        <img src="image/parts.jpg" alt="Parts Replacements">
-        <h3>Parts Replacements</h3>
-        <p class="service-desc">Brake Pads, Alternator Belt, Tie Rod, Rack End replacements with quality parts.</p>
-        <p class="service-price">Starts at $1000</p>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="services-section">
+    <div class="services-banner">OUR SERVICES</div>
+
+    <div class="service-container">
+
+      <div class="service-row">
+
+        <div class="service-card">
+          <img src="image/pms.jpg" alt="">
+          <h3>Preventive Maintenance Services (PMS)</h3>
+          <p class="service-desc">Regular preventive maintenance to keep your vehicle running smoothly and safely.</p>
+          <p class="service-price">Starts at $1000</p>
+        </div>
+
+        <div class="service-card">
+          <img src="image/cvt.jpeg" alt="">
+          <h3>Continuously Variable Transmission (CVT)</h3>
+          <p class="service-desc">CVT inspection, repair, and optimization for smooth gear performance.</p>
+          <p class="service-price">Starts at $1000</p>
+        </div>
+
       </div>
 
-      <!-- Card 4 -->
-      <div class="service-card">
-        <img src="image/electrical works.jpg" alt="Electrical Works">
-        <h3>Electrical Works</h3>
-        <p class="service-desc">Full electrical system inspection, repair, and component replacement.</p>
-        <p class="service-price">Starts at $1000</p>
+      <div class="service-row">
+
+        <div class="service-card">
+          <img src="image/parts.jpg" alt="">
+          <h3>Parts Replacements</h3>
+          <p class="service-desc">Brake Pads, Alternator Belt, Tie Rod, Rack End replacements with quality parts.</p>
+          <p class="service-price">Starts at $1000</p>
+        </div>
+
+        <div class="service-card">
+          <img src="image/electrical works.jpg" alt="">
+          <h3>Electrical Works</h3>
+          <p class="service-desc">Full electrical system inspection, repair, and component replacement.</p>
+          <p class="service-price">Starts at $1000</p>
+        </div>
+
+        <div class="service-card">
+          <img src="image/repaint.jpg" alt="">
+          <h3>Car Repair and Repaint</h3>
+          <p class="service-desc">Comprehensive car body repair and high-quality repaint services.</p>
+          <p class="service-price">Starts at $1000</p>
+        </div>
+
       </div>
 
-      <!-- Card 5 -->
-      <div class="service-card">
-        <img src="image/repaint.jpg" alt="Car Repair and Repaint">
-        <h3>Car Repair and Repaint</h3>
-        <p class="service-desc">Comprehensive car body repair and high-quality repaint services.</p>
-        <p class="service-price">Starts at $1000</p>
-      </div>
     </div>
-
-  </div>
-</section>
-
-<!-- DRIVE SECTION -->
-<section class="drive-section">
-  <div class="drive-content">
-    <span class="drive-label">Why Papz Baliciado Auto Care Center
-Offer quality, honesty, and customer satisfaction?</span>
-
-    <h2>Why people choose us?</h2>
-
-    <p>
-     At Papz Baliciado, we are committed to delivering quality, integrity, and complete customer satisfaction in every service we offer. Our skilled technicians utilize advanced tools to provide the highest level of care for your vehicle.
-
-Whether it’s routine maintenance or extensive repairs, we ensure your car stays in top condition with reliable, professional service you can count on
-    </p>
-
-    <a href="About.html" class="drive-btn">LEARN MORE</a>
-  </div>
-</section>
-
+  </section>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -152,6 +144,7 @@ Whether it’s routine maintenance or extensive repairs, we ensure your car stay
 
   <!-- SCRIPT -->
   <script>
+
     // Profile dropdown
     const profileBtn = document.querySelector('.profile-btn');
     const profileContainer = document.querySelector('.profile-container');
@@ -166,9 +159,20 @@ Whether it’s routine maintenance or extensive repairs, we ensure your car stay
       }
     });
 
-    // Hero Book Now button
-    const bookNowBtn = document.querySelector('.book');
-    bookNowBtn.addEventListener('click', () => window.location.href = 'booking.html');
+    // Book button
+    document.querySelector('.book').addEventListener('click', () => {
+      window.location.href = 'booking.html';
+    });
+
+    // Notification toggle
+    const notificationBell = document.getElementById("notificationBell");
+    const notificationDropdown = document.getElementById("notificationDropdown");
+
+    notificationBell.addEventListener("click", () => {
+      notificationDropdown.style.display =
+        notificationDropdown.style.display === "block" ? "none" : "block";
+    });
+
   </script>
 
 </body>
