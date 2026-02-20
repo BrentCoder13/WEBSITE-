@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Panel - Papz Baliciado</title>
+  <title>Admin Panel - PAPZ BALICIADO</title>
   <link rel="stylesheet" href="admin.css">
 
   <!-- Firebase SDKs -->
@@ -19,34 +19,32 @@
 <header class="navbar">
   <div class="nav-left">
     <img src="image/logo.jpg" class="nav-logo" alt="Logo">
-    <span class="brand-left">PAPZ BALICIADO ONLINE SERVICE ADMIN PANEL</span>
+    <span class="brand-left">PAPZ BALICIADO</span>
   </div>
 </header>
 
+<div class="menu-bar">
+  <ul class="nav-links">
+    <li class="active"><a href="admin.html">Bookings</a></li>
+    <!-- Home at Booking links removed for clean admin -->
+  </ul>
+</div>
+
 <div class="admin-container">
-  <h2>All Bookings</h2>
+  <h2>Admin - Manage Bookings</h2>
 
-  <div class="filter-container">
-    <label for="statusFilter">Filter by Status:</label>
-    <select id="statusFilter">
-      <option value="All">All</option>
-      <option value="Pending">Pending</option>
-      <option value="Approved">Approved</option>
-      <option value="Rejected">Rejected</option>
-    </select>
-  </div>
-
-  <table id="bookingsTable">
+  <table id="bookingsTable" border="1" style="width:100%; margin-top:10px; text-align:left;">
     <thead>
       <tr>
-        <th>User Email</th>
         <th>Full Name</th>
         <th>Service Date</th>
         <th>Status</th>
         <th>Action</th>
       </tr>
     </thead>
-    <tbody id="bookingsBody"></tbody>
+    <tbody id="bookingsBody">
+      <!-- Bookings will appear here -->
+    </tbody>
   </table>
 </div>
 

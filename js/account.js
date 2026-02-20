@@ -4,6 +4,9 @@ const accountMessage = document.getElementById("accountMessage");
 const bookingsBody = document.getElementById("bookingsBody");
 const updateBtn = document.getElementById("updateBtn");
 
+// Track previous statuses for notifications
+let previousStatuses = {};
+
 auth.onAuthStateChanged(user => {
   if (!user) {
     accountMessage.style.color = "red";
@@ -32,6 +35,7 @@ auth.onAuthStateChanged(user => {
         const data = doc.data();
         const row = document.createElement("tr");
         row.id = doc.id; // important para sa highlight
+
         let statusColor;
         switch(data.status) {
           case "Approved": statusColor = "green"; break;
@@ -45,6 +49,12 @@ auth.onAuthStateChanged(user => {
           <td style="color:${statusColor}; font-weight:bold;">${data.status || "Pending"}</td>
         `;
         bookingsBody.appendChild(row);
+
+        // 🔔 Notification alert kapag nagbago status
+        if (previousStatuses[doc.id] && previousStatuses[doc.id] !== data.status) {
+          alert(`Your booking on ${data.serviceDate} has been ${data.status}!`);
+        }
+        previousStatuses[doc.id] = data.status;
       });
 
       // Highlight kung may query param bookingId

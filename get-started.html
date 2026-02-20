@@ -60,35 +60,28 @@
 
   <!-- HERO SECTION -->
   <section id="home" class="hero">
-
     <div class="overlay"></div>
-
     <video class="hero-video" autoplay muted loop playsinline>
       <source src="image/mv papz.mp4" type="video/mp4">
     </video>
-
     <div class="hero-content left-bottom">
       <h1>PAPZ BALICIADO AUTO CARE CENTER</h1>
       <p class="tagline">Para sa Maayos at Ligtas na Byahe</p>
       <p class="description">
         Experience a new standard in auto care: attention to detail, expert hands, and genuine service for results you can trust.
       </p>
-
       <div class="hero-buttons">
         <button class="book">Book Now</button>
       </div>
     </div>
-
   </section>
 
   <!-- SERVICES SECTION -->
   <section id="services" class="services-section">
     <div class="services-banner">OUR SERVICES</div>
-
     <div class="service-container">
 
       <div class="service-row">
-
         <div class="service-card">
           <img src="image/pms.jpg" alt="">
           <h3>Preventive Maintenance Services (PMS)</h3>
@@ -102,11 +95,9 @@
           <p class="service-desc">CVT inspection, repair, and optimization for smooth gear performance.</p>
           <p class="service-price">Starts at $1000</p>
         </div>
-
       </div>
 
       <div class="service-row">
-
         <div class="service-card">
           <img src="image/parts.jpg" alt="">
           <h3>Parts Replacements</h3>
@@ -127,7 +118,6 @@
           <p class="service-desc">Comprehensive car body repair and high-quality repaint services.</p>
           <p class="service-price">Starts at $1000</p>
         </div>
-
       </div>
 
     </div>
@@ -141,28 +131,6 @@
     </div>
     <p class="footer-copy">© 2025 PAPZ BALICIADO AUTO CARE CENTER</p>
   </footer>
-
-  <!-- JS -->
-  <script>
-    // Profile dropdown
-    const profileBtn = document.querySelector('.profile-btn');
-    const profileContainer = document.querySelector('.profile-container');
-
-    profileBtn.addEventListener('click', () => {
-      profileContainer.classList.toggle('active');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!profileContainer.contains(e.target)) {
-        profileContainer.classList.remove('active');
-      }
-    });
-
-    // Book button
-    document.querySelector('.book').addEventListener('click', () => {
-      window.location.href = 'booking.html';
-    });
-  </script>
 
   <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
