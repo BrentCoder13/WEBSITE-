@@ -34,7 +34,7 @@ bookingForm.addEventListener("submit", (e) => {
     bookingForm.reset();
 
     // Redirect sa account management at highlight booking
-    window.location.href = `account.html?bookingId=${docRef.id}`;
+    window.location.href = `Account.html?bookingId=${docRef.id}`;
   })
   .catch((error) => {
     bookingMessage.style.color = "red";
