@@ -33,7 +33,7 @@ bookingForm.addEventListener("submit", (e) => {
     bookingMessage.textContent = "Booking submitted successfully! Redirecting...";
     bookingForm.reset();
 
-    // Redirect sa account management at highlight booking
+    // redirect sa account management at highlight booking
     window.location.href = `Account.html?bookingId=${docRef.id}`;
   })
   .catch((error) => {
