@@ -13,6 +13,38 @@
 
   <!-- FIREBASE CONFIG -->
   <script src="firebase-config.js"></script>
+
+  <style>
+    .password-wrapper {
+      position: relative;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .password-wrapper input {
+      width: 100%;
+      padding-right: 45px;
+      box-sizing: border-box;
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      user-select: none;
+      font-size: 18px;
+    }
+
+    .input-note {
+      font-size: 12px;
+      color: #666;
+      margin-top: -5px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+  </style>
 </head>
 
 <body>
@@ -31,7 +63,7 @@
   <div class="menu-bar">
     <ul class="nav-links">
       <li><a href="index.html">HOME</a></li>
-      <li><a href="contacts.html">CONTACTS</a></li>
+      <li><a href="contact.html">CONTACTS</a></li>
       <li><a href="about.html">ABOUT US</a></li>
     </ul>
   </div>
@@ -44,9 +76,34 @@
 
       <!-- FORM -->
       <form id="signupForm">
-        <input type="text" id="full_name" placeholder="Full Name" required>
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="password" id="password" placeholder="Password" required>
+        <input
+          type="text"
+          id="full_name"
+          placeholder="Full Name"
+          maxlength="40"
+          required
+        >
+        <div class="input-note">Maximum of 40 characters only.</div>
+
+        <input
+          type="email"
+          id="email"
+          placeholder="Email"
+          required
+        >
+
+        <div class="password-wrapper">
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            minlength="10"
+            required
+          >
+          <span id="togglePassword" class="toggle-password">👁</span>
+        </div>
+        <div class="input-note">Password must be at least 10 characters.</div>
+
         <button type="submit" class="auth-btn">Register</button>
       </form>
 
@@ -64,13 +121,25 @@
   <footer class="footer">
     <div class="footer-links">
       <a href="about.html">About Us</a>
-      <a href="contacts.html">Contacts</a>
+      <a href="contact.html">Contacts</a>
     </div>
     <p class="footer-copy">© 2025 PAPZ BALICIADO AUTO CARE CENTER</p>
   </footer>
 
   <!-- SIGNUP JS -->
   <script src="js/signup.js"></script>
+
+  <!-- SHOW / HIDE PASSWORD -->
+  <script>
+    const passwordInput = document.getElementById("password");
+    const togglePassword = document.getElementById("togglePassword");
+
+    togglePassword.addEventListener("click", () => {
+      const isPassword = passwordInput.getAttribute("type") === "password";
+      passwordInput.setAttribute("type", isPassword ? "text" : "password");
+      togglePassword.textContent = isPassword ? "🙈" : "👁";
+    });
+  </script>
 
 </body>
 </html>

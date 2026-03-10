@@ -6,57 +6,105 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 110px;
+  overflow-x: hidden;
 }
 
 /* ===== Navbar ===== */
 .navbar {
+  position: fixed;
+  top: 0;
   width: 100%;
+  height: 64px;
   display: flex;
   align-items: center;
-  padding: 10px 20px;
+  padding: 0 14px;
   background-color: #000000;
   color: white;
+  z-index: 1000;
 }
 
-.nav-logo { width: 50px; height: 50px; margin-right: 15px; }
-.brand-left { font-size: 20px; font-weight: bold; }
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.nav-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brand-left {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.1;
+  white-space: nowrap;
+}
 
 /* ===== Menu Bar ===== */
 .menu-bar {
+  position: fixed;
+  top: 64px;
   width: 100%;
   background-color: #ff0000;
   padding: 10px 0;
-  margin-bottom: 30px;
+  z-index: 999;
 }
+
 .menu-bar ul {
   list-style: none;
   display: flex;
   justify-content: center;
   margin: 0;
-  padding: 0;
+  padding: 0 10px;
+  gap: 18px;
+  flex-wrap: wrap;
 }
+
 .menu-bar ul li {
-  margin: 0 20px;
+  margin: 0;
 }
+
 .menu-bar ul li a {
   text-decoration: none;
   color: white;
   font-weight: bold;
+  font-size: 14px;
 }
+
 .menu-bar ul li.active a {
   text-decoration: underline;
 }
 
 /* ===== Account Container ===== */
 .account-container {
-  width: 500px;
+  width: calc(100% - 24px);
+  max-width: 520px;
   background-color: white;
-  padding: 40px 30px;
+  padding: 28px 18px;
   border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 14px 12px 24px;
+}
+
+.account-container h2 {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 12px;
+  color: #000;
+}
+
+.account-container p {
+  text-align: center;
+  color: #222;
+  margin-bottom: 10px;
 }
 
 /* ===== Form ===== */
@@ -64,19 +112,18 @@ form {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 form label {
-  width: 100%;
-  margin-top: 20px;
+  margin-top: 16px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 15px;
+  color: #000;
 }
 
 form input {
   width: 100%;
-  padding: 15px;
+  padding: 12px;
   margin-top: 8px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -84,11 +131,12 @@ form input {
   box-sizing: border-box;
 }
 
+/* ===== Button ===== */
 .submit-btn {
   width: 100%;
-  margin-top: 30px;
-  padding: 15px;
-  font-size: 18px;
+  margin-top: 24px;
+  padding: 14px;
+  font-size: 16px;
   background-color: #ff0000;
   color: white;
   border: none;
@@ -97,7 +145,7 @@ form input {
 }
 
 .submit-btn:hover {
-  background-color: #ff0000;
+  background-color: #d60000;
 }
 
 /* ===== Account Message ===== */
@@ -112,13 +160,17 @@ form input {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 30px;
-  font-size: 16px;
+  margin-top: 24px;
+  font-size: 14px;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
-table th, table td {
+table th,
+table td {
   border: 1px solid #ddd;
-  padding: 12px;
+  padding: 10px;
   text-align: center;
 }
 
@@ -127,22 +179,90 @@ table th {
   color: white;
 }
 
-table tr:nth-child(even) { background-color: #f2f2f2; }
-table tr:hover { background-color: #e0d4f0; }
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
+table tr:hover {
+  background-color: #e0d4f0;
+}
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .account-container {
-    margin: 20px;
-    padding: 15px;
+/* ===== Footer ===== */
+.footer {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 20px 15px;
+  text-align: center;
+  color: white;
+  margin-top: auto;
+}
+
+.footer-links {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  color: rgb(255, 0, 0);
+}
+
+.footer-copy {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* ===== Tablet and Desktop ===== */
+@media (min-width: 769px) {
+  body {
+    padding-top: 125px;
+  }
+
+  .navbar {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .nav-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .brand-left {
+    font-size: 20px;
+  }
+
+  .menu-bar {
+    top: 70px;
   }
 
   .menu-bar ul {
-    flex-direction: column;
+    gap: 40px;
   }
 
-  .menu-bar ul li {
-    margin-bottom: 10px;
+  .menu-bar ul li a {
+    font-size: 16px;
+  }
+
+  .account-container {
+    width: 100%;
+    padding: 40px 30px;
+    margin-top: 24px;
+  }
+
+  .account-container h2 {
+    font-size: 28px;
+  }
+
+  table {
+    display: table;
+    overflow-x: visible;
+    white-space: normal;
+    font-size: 15px;
   }
 }
